@@ -4715,11 +4715,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bartek\\Desktop\\projekt\\StockManager\\StockManager\\api\\api.csproj",
+      "projectUniqueName": "C:\\Users\\bartek\\Stock-Manager\\api\\api.csproj",
       "projectName": "api",
-      "projectPath": "C:\\Users\\bartek\\Desktop\\projekt\\StockManager\\StockManager\\api\\api.csproj",
+      "projectPath": "C:\\Users\\bartek\\Stock-Manager\\api\\api.csproj",
       "packagesPath": "C:\\Users\\bartek\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bartek\\Desktop\\projekt\\StockManager\\StockManager\\api\\obj\\",
+      "outputPath": "C:\\Users\\bartek\\Stock-Manager\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bartek\\AppData\\Roaming\\NuGet\\NuGet.Config",

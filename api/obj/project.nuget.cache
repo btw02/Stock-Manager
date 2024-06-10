@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7xYNmJ88DORvna1sHsiBotMcbO993gKErJhFhfkLrGUKT96g5TSSt4JVZnmMQRTuhJQEDRD8ZW6aAflk88G5QA==",
+  "dgSpecHash": "DUP0w5cGy0xSh7CCdhk6Ts0ixSu0oK+GS1tBaeACu+PnafQzdEnAIt6FEDWuUAxmFEqNDvSFNOuyTsomuc1KiA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bartek\\Desktop\\projekt\\StockManager\\StockManager\\api\\api.csproj",
+  "projectFilePath": "C:\\Users\\bartek\\Stock-Manager\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bartek\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\bartek\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
