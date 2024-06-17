@@ -107,12 +107,16 @@ builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>();
 
-
+//Financial Modeling Prep API
+builder.Services.AddScoped<IFMPService, FMPService>();
+builder.Services.AddHttpClient<IFMPService, FMPService>();
+//
 
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+// (MIDDLEWARE BELOW)
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -121,10 +125,22 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+//
+app.UseCors(a => a
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .AllowCredentials()
+    //.WithOrigins("http://localhost:5235")
+    .SetIsOriginAllowed(origin => true));
+
+//
+
+
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
 

@@ -6,6 +6,7 @@ using api.Data;
 using api.Models;
 using api.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using api.Helpers;
 
 namespace api.Repository
 {
@@ -38,9 +39,21 @@ namespace api.Repository
             return  commentModel;
         }
 
-        public async Task<List<Comment>> GetAllAsync()
+        public async Task<List<Comment>> GetAllAsync(CommentQueryObject queryObject)
         {
-            return await _context.Comments.Include(x => x.AppUser).ToListAsync();
+            var comments = _context.Comments.Include(x => x.AppUser).AsQueryable();
+            
+            if(!string.IsNullOrWhiteSpace(queryObject.Symbol))
+            {
+                comments = comments.Where(s => s.Stock.Symbol == queryObject.Symbol);
+            };
+
+            if(queryObject.IsDescending == true)
+            {
+                comments = comments.OrderByDescending(x => x.CreatedOn);
+            }
+
+            return await comments.ToListAsync();
         }
 
         public async Task<Comment?> GetByIdAsync(int id)
