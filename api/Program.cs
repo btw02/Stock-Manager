@@ -1,5 +1,6 @@
 using api.Data;
 using api.Interfaces;
+using api.Middleware;
 using api.Models;
 using api.Repository;
 using api.Service;
@@ -116,7 +117,10 @@ builder.Services.AddHttpClient<IFMPService, FMPService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-// (MIDDLEWARE BELOW)
+// adding middleware is not fun :(
+
+app.UseMiddleware<SecurityHeadersMiddleware>();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
